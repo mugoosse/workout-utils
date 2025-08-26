@@ -4,6 +4,7 @@
 # dependencies = [
 #     "playwright",
 #     "python-dotenv",
+#     "pandas",
 # ]
 # ///
 
@@ -347,6 +348,7 @@ async def extract_exercise_details(page, title, exercise_path):
     
     # Extract muscles
     target_muscles = []
+    lengthening_muscles = []
     synergist_muscles = []
     stabilizer_muscles = []
     
@@ -355,6 +357,19 @@ async def extract_exercise_details(page, title, exercise_path):
         
         # Get the muscle groups container
         active_muscles_container = page.locator("text=Active Muscles").locator("xpath=../..")
+        
+        # Extract Lengthening muscles (for stretching exercises)
+        try:
+            lengthening_column = active_muscles_container.locator("text=Lengthening").locator("xpath=..")
+            lengthening_text = await lengthening_column.inner_text()
+            for line in lengthening_text.split('\n'):
+                muscle = clean(line)
+                if muscle and muscle not in ["Lengthening", "Lengthening:", "🔒", ""] and len(muscle) > 2:
+                    lengthening_muscles.append(muscle)
+            if lengthening_muscles:
+                logger.info(f"  Found {len(lengthening_muscles)} lengthening muscles")
+        except:
+            pass
         
         # Extract Target muscles
         try:
@@ -399,6 +414,7 @@ async def extract_exercise_details(page, title, exercise_path):
         "exercise_path": exercise_path,
         "url": url,
         "target_muscles": "; ".join(target_muscles),
+        "lengthening_muscles": "; ".join(lengthening_muscles),
         "synergist_muscles": "; ".join(synergist_muscles),
         "stabilizer_muscles": "; ".join(stabilizer_muscles),
         "description": description,
@@ -502,7 +518,7 @@ async def extract_details_main():
         # Open CSV in append mode if resuming, write mode if starting fresh
         mode = "a" if resume_mode else "w"
         with FULL_CSV.open(mode, newline="", encoding="utf-8") as f:
-            fieldnames = ["title", "exercise_path", "url", "target_muscles", 
+            fieldnames = ["title", "exercise_path", "url", "target_muscles", "lengthening_muscles",
                          "synergist_muscles", "stabilizer_muscles", "description", "equipment"]
             writer = csv.DictWriter(f, fieldnames=fieldnames)
             
@@ -538,6 +554,95 @@ async def extract_details_main():
         logger.info(f"Completed. Full details saved to {FULL_CSV}")
         await browser.close()
 
+async def enrich_stretching_exercises():
+    """Enrich exercises with empty target_muscles by extracting lengthening muscles"""
+    
+    # Check if CSV exists
+    if not FULL_CSV.exists():
+        logger.error(f"Error: {FULL_CSV} not found.")
+        return
+    
+    # Read current data and find exercises with empty target_muscles
+    import pandas as pd
+    df = pd.read_csv(FULL_CSV)
+    
+    # Add lengthening_muscles column if it doesn't exist
+    if 'lengthening_muscles' not in df.columns:
+        # Add the column after target_muscles
+        cols = df.columns.tolist()
+        target_idx = cols.index('target_muscles')
+        cols.insert(target_idx + 1, 'lengthening_muscles')
+        df['lengthening_muscles'] = ''
+        df = df[cols]
+    
+    # Find exercises with empty target_muscles that don't already have lengthening_muscles
+    needs_enrichment = df[
+        (df['target_muscles'].isna() | (df['target_muscles'] == '')) &
+        (df['lengthening_muscles'].isna() | (df['lengthening_muscles'] == ''))
+    ]
+    logger.info(f"Found {len(needs_enrichment)} exercises that need lengthening muscle enrichment")
+    
+    if len(needs_enrichment) == 0:
+        logger.info("No exercises need enrichment - all already have lengthening muscles")
+        return
+    
+    # Limit to MAX_EXERCISES for testing if set
+    if MAX_EXERCISES:
+        needs_enrichment = needs_enrichment.head(MAX_EXERCISES)
+        logger.info(f"Limited to first {MAX_EXERCISES} exercises for testing")
+    
+    empty_target = needs_enrichment  # Keep the original variable name for the rest of the function
+    
+    async with async_playwright() as pw:
+        headless = bool(EMAIL and PASSWORD)
+        browser = await pw.chromium.launch(headless=headless)
+        ctx = await browser.new_context()
+        page = await ctx.new_page()
+        
+        # Login if credentials provided
+        if EMAIL and PASSWORD:
+            logger.info("Logging in for enrichment...")
+            await login(page)
+        else:
+            logger.info("Please log in manually...")
+            await page.goto(A2Z_URL)
+            try:
+                await page.wait_for_selector("text=A-Z list", timeout=120000)
+            except TimeoutError:
+                pass
+        
+        # Process each exercise
+        enriched_count = 0
+        for idx, row in empty_target.iterrows():
+            try:
+                logger.info(f"[{enriched_count+1}/{len(empty_target)}] Enriching: {row['title']}")
+                
+                # Extract exercise details with lengthening muscles
+                data = await extract_exercise_details(page, row['title'], row['exercise_path'])
+                
+                # Update the dataframe
+                if data['lengthening_muscles']:
+                    df.at[idx, 'lengthening_muscles'] = data['lengthening_muscles']
+                    df.at[idx, 'target_muscles'] = data['target_muscles']  # In case any target muscles were found
+                    logger.info(f"  ✓ Found lengthening muscles: {data['lengthening_muscles']}")
+                    enriched_count += 1
+                    
+                    # Save incrementally every 5 exercises
+                    if enriched_count % 5 == 0:
+                        df.to_csv(FULL_CSV, index=False)
+                        logger.info(f"  💾 Progress saved ({enriched_count} exercises enriched)")
+                else:
+                    logger.info(f"  ⚠ No lengthening muscles found")
+                    
+            except Exception as e:
+                logger.error(f"  ERROR enriching {row['title']}: {e}")
+        
+        # Save the final enriched data
+        df.to_csv(FULL_CSV, index=False)
+        logger.info(f"Enrichment complete! Updated {enriched_count} exercises in {FULL_CSV}")
+        
+        await browser.close()
+
 async def main():
     """Combined main function - collects links then extracts details"""
     # First collect links
@@ -556,10 +661,14 @@ if __name__ == "__main__":
         elif sys.argv[1] == "details":
             # Extract details from existing links
             asyncio.run(extract_details_main())
+        elif sys.argv[1] == "enrich":
+            # Enrich stretching exercises with lengthening muscles
+            asyncio.run(enrich_stretching_exercises())
         else:
-            print("Usage: python scrape_muscle_and_motion_v2.py [links|details]")
+            print("Usage: python scrape_muscle_and_motion_v2.py [links|details|enrich]")
             print("  links   - Collect exercise links only")
             print("  details - Extract details from collected links")
+            print("  enrich  - Enrich exercises with empty target_muscles (add lengthening muscles)")
             print("  (no arg) - Run both steps")
     else:
         # Run both steps
