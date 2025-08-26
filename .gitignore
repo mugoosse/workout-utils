@@ -1,0 +1,30 @@
+# Environment variables
+.env
+
+# Output files
+muscle_and_motion_exercises.csv
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Scraper specific files
+scraper.log
+debug_a2z_page.png
