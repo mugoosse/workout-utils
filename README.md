@@ -111,6 +111,15 @@ The scraper creates multiple CSV files:
 - `url`: Full URL to the muscle page
 - `muscle_group`: Muscle group extracted from individual muscle pages (e.g., "Muscles of Facial Expression")
 
+#### `muscles_final.csv` (muscle mapping file)
+- `muscle`: Muscle name
+- `url`: Full URL to the muscle page
+- `muscle_group`: Original muscle group from scraping
+- `svg_muscle_group`: Mapped to specific SVG muscle groups for visualization (36 options)
+- `broad_muscle_group`: Mapped to broad functional categories for strength training (11 options: chest, shoulders, triceps, biceps, upper_back, lats, glutes, quadriceps, hamstrings, calves, abs)
+
+This file provides a comprehensive mapping from the original scraped muscle list to standardized anatomical classifications suitable for fitness applications and muscle visualization.
+
 ## Notes
 
 ### Exercise Collection

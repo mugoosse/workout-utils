@@ -1,0 +1,1 @@
+- use uv run standalone python scripts with the dependencies at the top so we can run it as "uv run xyz.py"
