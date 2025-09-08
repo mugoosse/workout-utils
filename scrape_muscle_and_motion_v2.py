@@ -26,9 +26,13 @@ BASE = "https://app.strength.muscleandmotion.com"
 A2Z_URL = f"{BASE}/a-z"
 LOGIN_URL = f"{BASE}/login"
 
-# Output files
+# Output files - Exercises
 LINKS_CSV = Path("exercise_links.csv")
 FULL_CSV = Path("muscle_and_motion_exercises_full.csv")
+
+# Output files - Muscles
+MUSCLE_LINKS_CSV = Path("muscle_links.csv")
+MUSCLES_FULL_CSV = Path("muscles_full.csv")
 
 # Get credentials from environment variables
 EMAIL = os.getenv("MUSCLE_MOTION_EMAIL")
@@ -281,6 +285,146 @@ async def collect_exercise_links_only(page):
     logger.info(f"Found {len(unique_links)} unique exercises")
     return unique_links
 
+async def collect_muscle_links_only(page):
+    """
+    Collect only muscle names and paths from the A-Z page with Muscular Anatomy filter.
+    Returns list of (muscle_name, muscle_path) tuples.
+    """
+    await page.goto(A2Z_URL, wait_until="domcontentloaded")
+    
+    # Click on "Muscular Anatomy" in the sidebar navigation
+    try:
+        anatomy_found = False
+        
+        # Try to click on the Muscular Anatomy section in the sidebar
+        anatomy_section = page.locator("text=Muscular Anatomy")
+        if await anatomy_section.count() > 0:
+            await anatomy_section.first.click()
+            await page.wait_for_timeout(2000)  # Wait longer for navigation
+            logger.info(">>> Clicked Muscular Anatomy section in sidebar")
+            anatomy_found = True
+        else:
+            # Try alternative selectors
+            anatomy_section = page.locator("[data-testid*='anatomy'], [data-cy*='anatomy'], .anatomy, #anatomy")
+            if await anatomy_section.count() > 0:
+                await anatomy_section.first.click()
+                await page.wait_for_timeout(2000)
+                logger.info(">>> Clicked anatomy section using alternative selector")
+                anatomy_found = True
+            
+        if not anatomy_found:
+            logger.warning(">>> Muscular Anatomy section not found in sidebar - will collect all visible content")
+            
+    except Exception as e:
+        logger.error(f">>> Error clicking Muscular Anatomy section: {e}")
+        logger.info(">>> Will proceed to collect all visible muscle content")
+    
+    await page.wait_for_timeout(2000)
+    
+    # Take a screenshot to debug
+    if DEBUG_MODE:
+        await page.screenshot(path="debug_muscle_a2z_page.png")
+        logger.info(">>> Saved screenshot: debug_muscle_a2z_page.png")
+    
+    # Scroll to load all muscles
+    logger.info("Scrolling to load all muscles...")
+    prev_height = 0
+    scroll_attempts = 0
+    max_scroll_attempts = 30  # Muscles should load faster than exercises
+    
+    while scroll_attempts < max_scroll_attempts:
+        height = await page.evaluate("document.body.scrollHeight")
+        if DEBUG_MODE and scroll_attempts % 5 == 0:
+            logger.debug(f"Scroll attempt {scroll_attempts}, height: {height}")
+            
+        if height == prev_height:
+            if scroll_attempts > 5:  # Give fewer attempts for muscles
+                break
+        else:
+            prev_height = height
+        
+        await page.mouse.wheel(0, 3000)
+        await page.wait_for_timeout(500)
+        scroll_attempts += 1
+    
+    # Wait for all content to load
+    await page.wait_for_timeout(2000)
+    
+    # Collect all muscle links
+    logger.info("Collecting muscle links...")
+    muscle_links = []
+    
+    # Get all anchors and filter for muscle links
+    all_anchors = await page.locator("a").all()
+    logger.info(f">>> Found {len(all_anchors)} total anchors")
+    
+    for anchor in all_anchors:
+        try:
+            href = await anchor.get_attribute("href")
+            if DEBUG_MODE and href:
+                logger.debug(f">>> Found href: {href}")
+                
+            # Look for actual muscle links - be more specific about what constitutes a muscle link
+            if href and (
+                "/muscle/" in href or 
+                "/submuscle/" in href or
+                ("/anatomy/" in href and "theory-video" not in href) or
+                (href.startswith("/muscle-") or href.startswith("/anatomy-"))
+            ):
+                if DEBUG_MODE:
+                    logger.debug(f">>> Processing muscle link: {href}")
+                    
+                # Get the muscle name - try different methods
+                muscle_name = ""
+                
+                # Try to get from span elements first
+                spans = await anchor.locator("span").all()
+                if DEBUG_MODE:
+                    logger.debug(f">>> Found {len(spans)} spans in this anchor")
+                    
+                for span in spans:
+                    span_text = clean(await span.inner_text())
+                    if DEBUG_MODE:
+                        logger.debug(f">>> Span text: '{span_text}'")
+                    # Skip filter button text
+                    if span_text and span_text not in ["Muscular Anatomy", "Exercises"] and len(span_text) > 2:
+                        muscle_name = span_text
+                        break
+                
+                # Fallback to anchor text
+                if not muscle_name:
+                    anchor_text = clean(await anchor.inner_text())
+                    if DEBUG_MODE:
+                        logger.debug(f">>> Anchor text: '{anchor_text}'")
+                    if anchor_text and anchor_text not in ["Muscular Anatomy", "Exercises"] and len(anchor_text) > 2:
+                        muscle_name = anchor_text
+                
+                if muscle_name:
+                    # Clean up muscle name
+                    muscle_name = muscle_name.strip()
+                    muscle_links.append((muscle_name, href))
+                    if DEBUG_MODE:
+                        logger.debug(f">>> Added: {muscle_name} -> {href}")
+        except Exception as e:
+            if DEBUG_MODE:
+                logger.debug(f">>> Error processing anchor: {e}")
+    
+    logger.info(f"Found {len(muscle_links)} muscle links before deduplication")
+    
+    # Deduplicate by path
+    seen_paths = set()
+    unique_links = []
+    for muscle_name, path in muscle_links:
+        if path not in seen_paths:
+            seen_paths.add(path)
+            unique_links.append((muscle_name, path))
+    
+    # Sort alphabetically by muscle name
+    unique_links.sort(key=lambda x: x[0].lower())
+    
+    logger.info(f"Found {len(unique_links)} unique muscles")
+    return unique_links
+
 async def extract_exercise_details(page, title, exercise_path):
     """
     Extract detailed information from a single exercise page.
@@ -421,7 +565,41 @@ async def extract_exercise_details(page, title, exercise_path):
         "equipment": equipment,
     }
 
-async def collect_links_main():
+def extract_muscle_group_from_url_pattern(muscle_name, muscle_url, all_muscle_links):
+    """
+    Extract muscle group using URL pattern matching.
+    For muscles with parentheses like "Zygomaticus Major (7)", the URL ends with .7
+    We can look up the parent URL (without .7) to find the group name.
+    """
+    import re
+    
+    # Check if muscle name has parentheses with number
+    parentheses_match = re.search(r'\((\d+)\)$', muscle_name)
+    if not parentheses_match:
+        return ""
+    
+    # Extract the number from parentheses
+    number = parentheses_match.group(1)
+    
+    # Check if URL ends with .{number}
+    url_pattern = f".{number}"
+    if not muscle_url.endswith(url_pattern):
+        logger.warning(f"  URL pattern mismatch for {muscle_name}: expected {url_pattern}")
+        return ""
+    
+    # Get parent URL by removing .{number}
+    parent_url = muscle_url[:-len(url_pattern)]
+    
+    # Look up parent URL in all_muscle_links to find the group name
+    for muscle_name_in_list, url_in_list in all_muscle_links:
+        if url_in_list == parent_url:
+            logger.info(f"  ✓ Found muscle group for {muscle_name}: {muscle_name_in_list}")
+            return muscle_name_in_list
+    
+    logger.warning(f"  ⚠ Parent URL {parent_url} not found in muscle links for {muscle_name}")
+    return ""
+
+async def collect_exercise_links_main():
     """Main function to collect all exercise links and save to CSV"""
     async with async_playwright() as pw:
         headless = bool(EMAIL and PASSWORD)
@@ -458,7 +636,7 @@ async def collect_links_main():
         logger.info(f"Saved {len(links)} exercise links to {LINKS_CSV}")
         await browser.close()
 
-async def extract_details_main():
+async def extract_exercise_details_main():
     """Main function to extract details for all exercises from links CSV"""
     
     # Check if links CSV exists
@@ -643,33 +821,125 @@ async def enrich_stretching_exercises():
         
         await browser.close()
 
+async def collect_muscles_main():
+    """Main function to collect all muscles and save to CSV with muscle groups"""
+    async with async_playwright() as pw:
+        headless = bool(EMAIL and PASSWORD)
+        browser = await pw.chromium.launch(headless=headless)
+        ctx = await browser.new_context()
+        page = await ctx.new_page()
+        
+        # Login if credentials provided
+        if EMAIL and PASSWORD:
+            logger.info("Logging in for muscle collection...")
+            await login(page)
+        else:
+            await page.goto(A2Z_URL)
+            logger.info(">>> Please log in manually...")
+            try:
+                await page.wait_for_selector("text=A-Z list", timeout=120000)
+            except TimeoutError:
+                pass
+        
+        # Collect muscle links
+        logger.info("Collecting muscle links...")
+        muscle_links = await collect_muscle_links_only(page)
+        
+        # Apply limit if set
+        if MAX_EXERCISES:
+            muscle_links = muscle_links[:MAX_EXERCISES]
+            logger.info(f">>> Limited to {MAX_EXERCISES} muscles for testing")
+        
+        # Save basic muscle links to CSV first
+        with MUSCLE_LINKS_CSV.open("w", newline="", encoding="utf-8") as f:
+            writer = csv.writer(f)
+            writer.writerow(["muscle", "url"])
+            for muscle_name, muscle_path in muscle_links:
+                full_url = urljoin(BASE, muscle_path)
+                writer.writerow([muscle_name, full_url])
+        
+        logger.info(f"Saved {len(muscle_links)} muscle links to {MUSCLE_LINKS_CSV}")
+        
+        # Process muscles to get muscle groups for those with parentheses using URL pattern matching
+        logger.info("Processing muscles to extract muscle groups using URL pattern matching...")
+        muscles_with_groups = []
+        
+        # Create a list of full URLs for the extraction function
+        muscle_links_full_urls = [(muscle_name, urljoin(BASE, muscle_path)) for muscle_name, muscle_path in muscle_links]
+        
+        for idx, (muscle_name, muscle_path) in enumerate(muscle_links, 1):
+            full_url = urljoin(BASE, muscle_path)
+            muscle_group = ""
+            
+            # Check if muscle name has parentheses with a number (e.g., "Buccinator (10)")
+            import re
+            if re.search(r'\(\d+\)$', muscle_name):
+                logger.info(f"[{idx}/{len(muscle_links)}] Processing muscle with parentheses: {muscle_name}")
+                try:
+                    muscle_group = extract_muscle_group_from_url_pattern(muscle_name, full_url, muscle_links_full_urls)
+                    if muscle_group:
+                        logger.info(f"  ✓ Found muscle group: {muscle_group}")
+                    else:
+                        logger.warning(f"  ⚠ No muscle group found for: {muscle_name}")
+                except Exception as e:
+                    logger.error(f"  ERROR processing {muscle_name}: {e}")
+            else:
+                logger.info(f"[{idx}/{len(muscle_links)}] Muscle without parentheses: {muscle_name} (no group extraction needed)")
+            
+            muscles_with_groups.append({
+                "muscle": muscle_name,
+                "url": full_url,
+                "muscle_group": muscle_group
+            })
+        
+        # Save full muscle data with groups to CSV
+        with MUSCLES_FULL_CSV.open("w", newline="", encoding="utf-8") as f:
+            fieldnames = ["muscle", "url", "muscle_group"]
+            writer = csv.DictWriter(f, fieldnames=fieldnames)
+            writer.writeheader()
+            
+            for muscle_data in muscles_with_groups:
+                writer.writerow(muscle_data)
+        
+        logger.info(f"Saved {len(muscles_with_groups)} muscles with groups to {MUSCLES_FULL_CSV}")
+        
+        # Summary
+        with_groups = len([m for m in muscles_with_groups if m["muscle_group"]])
+        logger.info(f"Summary: {len(muscles_with_groups)} total muscles, {with_groups} with muscle groups extracted")
+        
+        await browser.close()
+
 async def main():
-    """Combined main function - collects links then extracts details"""
-    # First collect links
-    await collect_links_main()
+    """Combined main function - collects exercise links then extracts details"""
+    # First collect exercise links
+    await collect_exercise_links_main()
     
-    # Then extract details
-    await extract_details_main()
+    # Then extract exercise details
+    await extract_exercise_details_main()
 
 if __name__ == "__main__":
     import sys
     
     if len(sys.argv) > 1:
         if sys.argv[1] == "links":
-            # Just collect links
-            asyncio.run(collect_links_main())
+            # Just collect exercise links
+            asyncio.run(collect_exercise_links_main())
         elif sys.argv[1] == "details":
-            # Extract details from existing links
-            asyncio.run(extract_details_main())
+            # Extract exercise details from existing links
+            asyncio.run(extract_exercise_details_main())
         elif sys.argv[1] == "enrich":
             # Enrich stretching exercises with lengthening muscles
             asyncio.run(enrich_stretching_exercises())
+        elif sys.argv[1] == "muscles":
+            # Collect muscles and muscle groups
+            asyncio.run(collect_muscles_main())
         else:
-            print("Usage: python scrape_muscle_and_motion_v2.py [links|details|enrich]")
+            print("Usage: python scrape_muscle_and_motion_v2.py [links|details|enrich|muscles]")
             print("  links   - Collect exercise links only")
             print("  details - Extract details from collected links")
             print("  enrich  - Enrich exercises with empty target_muscles (add lengthening muscles)")
-            print("  (no arg) - Run both steps")
+            print("  muscles - Collect muscles and their groups")
+            print("  (no arg) - Run both exercise steps (links + details)")
     else:
         # Run both steps
         asyncio.run(main())

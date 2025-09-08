@@ -1,6 +1,6 @@
-# Muscle and Motion Exercise Scraper
+# Muscle and Motion Scraper
 
-A web scraper for extracting exercise data from the Muscle and Motion Strength app.
+A web scraper for extracting exercise data and muscle information from the Muscle and Motion Strength app.
 
 ## Setup
 
@@ -33,7 +33,7 @@ uv run --with playwright python -m playwright install chromium
 
 This script can be run as a standalone uv script. First, make sure you have [uv](https://github.com/astral-sh/uv) installed.
 
-### Two-Step Process (Recommended)
+### Exercise Scraping (Two-Step Process)
 
 **Step 1: Collect all exercise links** (fast operation):
 ```bash
@@ -50,6 +50,19 @@ uv run scrape_muscle_and_motion_v2.py details
 uv run scrape_muscle_and_motion_v2.py
 ```
 
+### Muscle Collection
+
+**Collect muscles and their groups**:
+```bash
+uv run scrape_muscle_and_motion_v2.py muscles
+```
+
+This command will:
+- Navigate to the A-Z page and click the "Muscular Anatomy" filter
+- Collect all muscle names and URLs
+- For muscles with parentheses (e.g., "Buccinator (10)"), extract muscle group information using URL pattern matching
+- Export results to CSV files
+
 ### Configuration
 
 Edit the `MAX_EXERCISES` variable in `scrape_muscle_and_motion_v2.py` to control batch size:
@@ -63,18 +76,21 @@ The script will:
 - Open a browser window for manual login if no credentials are set
 
 **Operation modes:**
-1. **Links mode**: Navigate to A-Z page, collect all exercise titles and paths, save to `exercise_links.csv`
+1. **Links mode**: Navigate to A-Z page with Exercises filter, collect all exercise titles and paths, save to `exercise_links.csv`
 2. **Details mode**: Process each exercise path, extract muscles/equipment/descriptions, save to `muscle_and_motion_exercises_full.csv`
+3. **Muscles mode**: Navigate to A-Z page with Muscular Anatomy filter, collect muscle names and groups, save to muscle CSV files
 
 ## Output Files
 
-The scraper creates two CSV files:
+The scraper creates multiple CSV files:
 
-### `exercise_links.csv` (from links command)
+### Exercise Files
+
+#### `exercise_links.csv` (from links command)
 - `title`: Exercise name
 - `exercise_path`: Relative path to exercise page
 
-### `muscle_and_motion_exercises_full.csv` (from details command)
+#### `muscle_and_motion_exercises_full.csv` (from details command)
 - `title`: Exercise name
 - `exercise_path`: Relative path to exercise page  
 - `url`: Full URL to the exercise page
@@ -84,14 +100,33 @@ The scraper creates two CSV files:
 - `description`: Complete exercise instructions
 - `equipment`: Inferred equipment needed (Barbell, Dumbbell, etc.)
 
+### Muscle Files
+
+#### `muscle_links.csv` (from muscles command)
+- `muscle`: Muscle name
+- `url`: Full URL to the muscle page
+
+#### `muscles_full.csv` (from muscles command)
+- `muscle`: Muscle name (e.g., "Buccinator (10)")
+- `url`: Full URL to the muscle page
+- `muscle_group`: Muscle group extracted from individual muscle pages (e.g., "Muscles of Facial Expression")
+
 ## Notes
 
+### Exercise Collection
 - The browser runs headless if credentials are provided, otherwise opens for manual login
 - Link collection: Automatically scrolls through A-Z page to load all 1,160+ exercises
 - Detail extraction: Processes each exercise page to extract comprehensive information
 - **Resume capability**: If the details extraction is interrupted, simply run the command again and it will automatically resume from where it left off
 - Equipment inference: Based on keywords in title and description
 - Non-standard CSS classes (jss*) are avoided for reliable extraction
+
+### Muscle Collection
+- Uses the "Muscular Anatomy" filter on the A-Z page
+- Automatically detects muscles with parentheses (e.g., "Buccinator (10)") 
+- For parentheses muscles: extracts muscle group using URL pattern matching (e.g., URL ending in `.10` maps to parent group URL)
+- For muscles without parentheses: no additional processing required
+- Muscle group examples: "Muscles of Facial Expression", "Sole of Foot (1st Plantar Layer)", "Wrist Flexors", etc.
 
 ## Resume Feature
 
