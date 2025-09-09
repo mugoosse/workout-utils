@@ -1,37 +1,37 @@
-id,name
-1,Adductor Longus and Pectineus
-2,Adductor magnus
-3,Biceps brachii
-4,Biceps femoris
-5,Brachialis
-6,Brachioradialis
-7,Deltoids
-8,Extensor carpi radialis
-9,External obliques
-10,Flexor carpi radialis
-11,Flexor carpi ulnaris
-12,Gastrocnemius
-13,Gluteus maximus
-14,Gluteus medius
-15,Gracilis
-16,Infraspinatus
-17,Latissimus dorsi
-18,Lower Trapezius
-19,Omohyoid
-20,Pectoralis Major
-21,Peroneus longus
-22,Rectus Abdominus
-23,Rectus femoris
-24,Rhomboid major
-25,Sartorius
-26,Semitendinosus
-27,Serratus Anterior
-28,Soleus
-29,Sternocleidomastoid
-30,Tensor fasciae latae
-31,Teres major
-32,Thoracolumbar fascia
-33,Trapezius
-34,Triceps brachii
-35,Vastus Lateralis
-36,Vastus Medialis
+id,name,slug
+1,Adductor Longus and Pectineus,adductor_longus_and_pectineus
+2,Adductor magnus,adductor_magnus
+3,Biceps brachii,biceps_brachii
+4,Biceps femoris,biceps_femoris
+5,Brachialis,brachialis
+6,Brachioradialis,brachioradialis
+7,Deltoids,deltoids
+8,Extensor carpi radialis,extensor_carpi_radialis
+9,External obliques,external_obliques
+10,Flexor carpi radialis,flexor_carpi_radialis
+11,Flexor carpi ulnaris,flexor_carpi_ulnaris
+12,Gastrocnemius,gastrocnemius
+13,Gluteus maximus,gluteus_maximus
+14,Gluteus medius,gluteus_medius
+15,Gracilis,gracilis
+16,Infraspinatus,infraspinatus
+17,Latissimus dorsi,latissimus_dorsi
+18,Lower Trapezius,lower_trapezius
+19,Omohyoid,omohyoid
+20,Pectoralis Major,pectoralis_major
+21,Peroneus longus,peroneus_longus
+22,Rectus Abdominus,rectus_abdominus
+23,Rectus femoris,rectus_femoris
+24,Rhomboid muscles,rhomboid_muscles
+25,Sartorius,sartorius
+26,Semitendinosus,semitendinosus
+27,Serratus Anterior,serratus_anterior
+28,Soleus,soleus
+29,Sternocleidomastoid,sternocleidomastoid
+30,Tensor fasciae latae,tensor_fasciae_latae
+31,Teres major,teres_major
+32,Erector Spinae,erector_spinae
+33,Trapezius,trapezius
+34,Triceps brachii,triceps_brachii
+35,Vastus Lateralis,vastus_lateralis
+36,Vastus Medialis,vastus_medialis
