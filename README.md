@@ -1,8 +1,32 @@
-# Muscle and Motion Scraper
+# Workout Utils
 
-A web scraper for extracting exercise data and muscle information from the Muscle and Motion Strength app.
+A collection of tools for extracting exercise data and muscle information from the Muscle and Motion Strength app, along with an interactive muscle anatomy visualizer.
 
-## Setup
+## Interactive Muscle Visualizer
+
+The visualizer provides an interactive anatomy view showing which muscles are targeted, synergist, stabilizer, or lengthening during different exercises.
+
+### Running the Visualizer
+
+1. **Start a local server** (required for loading SVG assets):
+   ```bash
+   cd visualizer
+   python3 -m http.server 8000
+   ```
+
+2. **Open in browser**:
+   - Navigate to `http://localhost:8000`
+   - Select different exercises from the dropdown
+   - Toggle muscle groups on/off using the legend checkboxes
+
+### Features
+
+- **Interactive muscle groups**: Click checkboxes to show/hide different muscle function types
+- **Multiple exercises**: Currently includes Bench Press, Deadlift, and Pull-ups
+- **Anatomical accuracy**: Based on professional muscle anatomy SVGs
+- **Responsive design**: Works on desktop and mobile devices
+
+## Muscle and Motion Scraper Setup
 
 ### 1. Configure Login Credentials (Optional)
 
@@ -29,7 +53,7 @@ Before running the script, you need to install the Chromium browser for Playwrig
 uv run --with playwright python -m playwright install chromium
 ```
 
-## Running with uv
+## Muscle and Motion Scraper Usage
 
 This script can be run as a standalone uv script. First, make sure you have [uv](https://github.com/astral-sh/uv) installed.
 

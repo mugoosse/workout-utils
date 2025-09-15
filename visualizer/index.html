@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Muscle Anatomy Visualization</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Interactive Muscle Anatomy</h1>
+            <div class="controls">
+                <label for="exercise-select">Select Exercise:</label>
+                <select id="exercise-select">
+                    <option value="bench_press">Bench Press</option>
+                    <option value="deadlift">Deadlift</option>
+                    <option value="pull_ups">Pull-ups</option>
+                </select>
+            </div>
+        </header>
+
+        <div class="legend">
+            <h3>Muscle Function Legend</h3>
+            <div class="legend-items">
+                <div class="legend-item">
+                    <input type="checkbox" id="toggle-target" class="muscle-toggle" checked>
+                    <label for="toggle-target" class="legend-label">
+                        <div class="color-box target"></div>
+                        <span>Target Muscles (Primary Movers)</span>
+                    </label>
+                </div>
+                <div class="legend-item">
+                    <input type="checkbox" id="toggle-synergist" class="muscle-toggle" checked>
+                    <label for="toggle-synergist" class="legend-label">
+                        <div class="color-box synergist"></div>
+                        <span>Synergist Muscles (Assisters)</span>
+                    </label>
+                </div>
+                <div class="legend-item">
+                    <input type="checkbox" id="toggle-stabilizer" class="muscle-toggle" checked>
+                    <label for="toggle-stabilizer" class="legend-label">
+                        <div class="color-box stabilizer"></div>
+                        <span>Stabilizer Muscles</span>
+                    </label>
+                </div>
+                <div class="legend-item">
+                    <input type="checkbox" id="toggle-lengthening" class="muscle-toggle" checked>
+                    <label for="toggle-lengthening" class="legend-label">
+                        <div class="color-box lengthening"></div>
+                        <span>Lengthening Muscles (Antagonists)</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="anatomy-container">
+            <div class="view-container">
+                <h2>Front View</h2>
+                <div id="front-body" class="body-view">
+                    <div class="loading">Loading front muscles...</div>
+                </div>
+            </div>
+            <div class="view-container">
+                <h2>Back View</h2>
+                <div id="back-body" class="body-view">
+                    <div class="loading">Loading back muscles...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

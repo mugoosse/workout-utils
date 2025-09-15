@@ -1,0 +1,96 @@
+{
+  "exercises": {
+    "bench_press": {
+      "name": "Bench Press",
+      "target_muscles": [
+        "Pectoralis Major",
+        "Triceps brachii, long head",
+        "Triceps brachii, medial head",
+        "Triceps Brachii ( long head, lateral head )"
+      ],
+      "synergist_muscles": [
+        "Deltoids",
+        "Serratus Anterior"
+      ],
+      "stabilizer_muscles": [
+        "Trapezius",
+        "Lower Trapezius",
+        "Rhomboid major",
+        "Rectus Abdominus",
+        "External obliques"
+      ],
+      "lengthening_muscles": [
+        "Latissimus dorsi",
+        "Infraspinatus",
+        "Teres major"
+      ]
+    },
+    "deadlift": {
+      "name": "Deadlift",
+      "target_muscles": [
+        "Gluteus maximus",
+        "Biceps femoris",
+        "Semitendinosus",
+        "Latissimus dorsi",
+        "Trapezius",
+        "Lower Trapezius"
+      ],
+      "synergist_muscles": [
+        "Gluteus medius",
+        "Adductor magnus",
+        "Rhomboid major",
+        "Infraspinatus",
+        "Teres major",
+        "External obliques"
+      ],
+      "stabilizer_muscles": [
+        "Rectus Abdominus",
+        "Gastrocnemius (calf)",
+        "Gastrocnemius, medial head",
+        "Gastrocnemius, lateral head",
+        "Soleus",
+        "Deltoids"
+      ],
+      "lengthening_muscles": [
+        "Rectus femoris",
+        "Vastus Lateralis",
+        "Vastus Medialis"
+      ]
+    },
+    "pull_ups": {
+      "name": "Pull-ups",
+      "target_muscles": [
+        "Latissimus dorsi",
+        "Biceps brachii",
+        "Rhomboid major",
+        "Lower Trapezius"
+      ],
+      "synergist_muscles": [
+        "Trapezius",
+        "Infraspinatus",
+        "Teres major",
+        "Brachialis",
+        "Brachioradialis"
+      ],
+      "stabilizer_muscles": [
+        "Deltoids",
+        "Serratus Anterior",
+        "Rectus Abdominus",
+        "External obliques"
+      ],
+      "lengthening_muscles": [
+        "Pectoralis Major",
+        "Triceps brachii, long head",
+        "Triceps brachii, medial head",
+        "Triceps Brachii ( long head, lateral head )"
+      ]
+    }
+  },
+  "muscle_colors": {
+    "target": "#E74C3C",
+    "synergist": "#F39C12",
+    "stabilizer": "#F1C40F",
+    "lengthening": "#3498DB",
+    "inactive": "#BDC3C7"
+  }
+}
