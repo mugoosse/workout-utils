@@ -1,7 +1,7 @@
 class MuscleAnatomyApp {
     constructor() {
         this.config = null;
-        this.currentExercise = 'bench_press';
+        this.currentExercise = null;
         this.frontBodySVG = null;
         this.backBodySVG = null;
         this.activeToggles = {
@@ -15,17 +15,51 @@ class MuscleAnatomyApp {
 
     async init() {
         await this.loadConfig();
+        this.populateExerciseList();
         this.setupEventListeners();
         await this.loadBodySVGs();
-        this.updateVisualization();
+        if (this.currentExercise) {
+            this.updateVisualization();
+        }
     }
 
     async loadConfig() {
         try {
-            const response = await fetch('config.json');
+            const response = await fetch('config_generated.json');
             this.config = await response.json();
         } catch (error) {
             console.error('Error loading config:', error);
+        }
+    }
+
+    populateExerciseList() {
+        if (!this.config || !this.config.exercises) return;
+
+        const exerciseSelect = document.getElementById('exercise-select');
+        exerciseSelect.innerHTML = '';
+
+        // Get all exercises and sort them alphabetically
+        const exercises = Object.entries(this.config.exercises)
+            .sort((a, b) => a[1].name.localeCompare(b[1].name));
+
+        // Add default option
+        const defaultOption = document.createElement('option');
+        defaultOption.value = '';
+        defaultOption.textContent = 'Select an exercise...';
+        exerciseSelect.appendChild(defaultOption);
+
+        // Add all exercises
+        exercises.forEach(([key, exercise]) => {
+            const option = document.createElement('option');
+            option.value = key;
+            option.textContent = exercise.name;
+            exerciseSelect.appendChild(option);
+        });
+
+        // Set first real exercise as default
+        if (exercises.length > 0) {
+            this.currentExercise = exercises[0][0];
+            exerciseSelect.value = this.currentExercise;
         }
     }
 
@@ -33,7 +67,9 @@ class MuscleAnatomyApp {
         const exerciseSelect = document.getElementById('exercise-select');
         exerciseSelect.addEventListener('change', (e) => {
             this.currentExercise = e.target.value;
-            this.updateVisualization();
+            if (this.currentExercise) {
+                this.updateVisualization();
+            }
         });
 
         // Setup toggle event listeners
@@ -49,16 +85,25 @@ class MuscleAnatomyApp {
 
     // Convert muscle name to standardized SVG ID using comprehensive mapping
     muscleNameToId(muscleName) {
-        // Comprehensive mapping from config muscle names to standardized slugs
+        // First check if we have a muscle_to_svg_id mapping from the config
+        if (this.config && this.config.muscle_to_svg_id && this.config.muscle_to_svg_id[muscleName]) {
+            return this.config.muscle_to_svg_id[muscleName];
+        }
+
+        // Fallback to hardcoded mapping for any missing entries
         const muscleMapping = {
             // Pectoralis variations
             "Pectoralis Major": "pectoralis_major",
+            "Pectoralis Major, Clavicular Head": "pectoralis_major",
+            "Pectoralis Major, Sternal Head": "pectoralis_major",
 
             // Triceps variations
             "Triceps brachii, long head": "triceps_brachii",
             "Triceps brachii, medial head": "triceps_brachii",
             "Triceps Brachii ( long head, lateral head )": "triceps_brachii",
             "Triceps brachii": "triceps_brachii",
+            "Triceps Brachii": "triceps_brachii",
+            "Triceps Brachii, Long Head": "triceps_brachii_long_head",
 
             // Deltoids
             "Deltoids": "deltoids",
@@ -218,9 +263,10 @@ class MuscleAnatomyApp {
     }
 
     updateVisualization() {
-        if (!this.config || !this.frontBodySVG || !this.backBodySVG) return;
+        if (!this.config || !this.currentExercise || !this.frontBodySVG || !this.backBodySVG) return;
 
         const exercise = this.config.exercises[this.currentExercise];
+        if (!exercise) return;
         const colors = this.config.muscle_colors;
 
         // Get all muscle names from config

@@ -4,27 +4,65 @@ A collection of tools for extracting exercise data and muscle information from t
 
 ## Interactive Muscle Visualizer
 
-The visualizer provides an interactive anatomy view showing which muscles are targeted, synergist, stabilizer, or lengthening during different exercises.
+The visualizer provides an interactive anatomy view showing which muscles are targeted, synergist, stabilizer, or lengthening during different exercises. The visualizer dynamically loads exercise data from CSV files containing 940+ exercises from the Muscle and Motion database.
 
 ### Running the Visualizer
 
-1. **Start a local server** (required for loading SVG assets):
+#### Quick Start with Helper Script
+```bash
+uv run run_visualizer.py
+```
+This will:
+- Generate the configuration from CSV files
+- Start a local web server
+- Open the visualizer in your browser
+
+#### Manual Method
+
+1. **Generate configuration from CSV data**:
+   ```bash
+   uv run generate_config.py
+   ```
+   This creates `visualizer/config_generated.json` from the exercise and muscle CSV files.
+
+2. **Start a local server**:
    ```bash
    cd visualizer
    python3 -m http.server 8000
    ```
 
-2. **Open in browser**:
-   - Navigate to `http://localhost:8000`
-   - Select different exercises from the dropdown
-   - Toggle muscle groups on/off using the legend checkboxes
+3. **Open in browser**:
+   Navigate to `http://localhost:8000`
 
 ### Features
 
-- **Interactive muscle groups**: Click checkboxes to show/hide different muscle function types
-- **Multiple exercises**: Currently includes Bench Press, Deadlift, and Pull-ups
+- **940+ exercises**: Full database from Muscle and Motion app
+- **Dynamic data loading**: Exercise data loaded from CSV files, not hardcoded
+- **Interactive muscle groups**: Toggle different muscle function types on/off
+- **Muscle mapping**: Automatic mapping from muscle names to SVG anatomy elements
+- **Color-coded visualization**:
+  - Red: Target muscles (primary movers)
+  - Orange: Synergist muscles (assisters)
+  - Yellow: Stabilizer muscles
+  - Blue: Lengthening muscles (antagonists)
 - **Anatomical accuracy**: Based on professional muscle anatomy SVGs
 - **Responsive design**: Works on desktop and mobile devices
+
+### Data Pipeline
+
+1. **Source Data**:
+   - `muscle_and_motion_exercises_full.csv` - Contains all exercise definitions
+   - `muscles_mapped.csv` - Maps muscle names to visualization groups
+
+2. **Config Generation** (`generate_config.py`):
+   - Reads exercise data from CSV
+   - Creates muscle name to SVG ID mappings
+   - Outputs `config_generated.json` for the visualizer
+
+3. **Visualization** (`visualizer/`):
+   - Loads generated config
+   - Dynamically populates exercise dropdown
+   - Highlights muscles in SVG based on selected exercise
 
 ## Muscle and Motion Scraper Setup
 
