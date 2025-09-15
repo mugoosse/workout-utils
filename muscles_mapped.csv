@@ -73,7 +73,7 @@ Gluteus Maximus,https://app.strength.muscleandmotion.com/submuscle/41,,13,glutes
 Gluteus Medius,https://app.strength.muscleandmotion.com/submuscle/42,,14,glutes
 Gluteus Minimus,https://app.strength.muscleandmotion.com/submuscle/43,,14,glutes
 Gracilis,https://app.strength.muscleandmotion.com/submuscle/6.5,Hip Adductor Muscles,15,hamstrings
-Hamstrings,https://app.strength.muscleandmotion.com/submuscle/33,,,
+Hamstrings,https://app.strength.muscleandmotion.com/submuscle/33,,4,
 Hip Adductor Muscles,https://app.strength.muscleandmotion.com/submuscle/6,,15,
 Hip External Rotators (Deep Layer),https://app.strength.muscleandmotion.com/submuscle/44,,,
 Hypothenar Eminence,https://app.strength.muscleandmotion.com/submuscle/68,,,
@@ -116,7 +116,7 @@ Mentalis (15),https://app.strength.muscleandmotion.com/submuscle/80.16,,,
 Middle Deltoid,https://app.strength.muscleandmotion.com/submuscle/3.2,,7,shoulders
 Middle Scalene,https://app.strength.muscleandmotion.com/submuscle/71.2,,,
 Middle Trapezius,https://app.strength.muscleandmotion.com/submuscle/2.2,Trapezius,33,upper_back
-Multifidus,https://app.strength.muscleandmotion.com/submuscle/22.2,,,
+Multifidus,https://app.strength.muscleandmotion.com/submuscle/22.2,,32,
 Muscles of Facial Expression,https://app.strength.muscleandmotion.com/submuscle/80,,,
 Muscles of Forced Respiration,https://app.strength.muscleandmotion.com/submuscle/81,,,
 Muscles of Quiet Respiration,https://app.strength.muscleandmotion.com/submuscle/67,,,
@@ -163,10 +163,10 @@ Pterygoid Muscles,https://app.strength.muscleandmotion.com/submuscle/79,,,
 Pubococcygeus,https://app.strength.muscleandmotion.com/submuscle/82.3,,,
 Puborectalis,https://app.strength.muscleandmotion.com/submuscle/82.2,,,
 Quadratus Femoris (Hip Rotators) (4),https://app.strength.muscleandmotion.com/submuscle/44.4,Hip External Rotators (Deep Layer),,
-Quadratus Lumborum,https://app.strength.muscleandmotion.com/submuscle/70,,,
+Quadratus Lumborum,https://app.strength.muscleandmotion.com/submuscle/70,,32,
 Quadratus Lumborum (Respiration),https://app.strength.muscleandmotion.com/submuscle/81.13,,,
 Quadratus Plantae,https://app.strength.muscleandmotion.com/submuscle/60.1,,,
-Quadriceps Femoris,https://app.strength.muscleandmotion.com/submuscle/7,,,
+Quadriceps Femoris,https://app.strength.muscleandmotion.com/submuscle/7,,23,
 Rectus Abdominis,https://app.strength.muscleandmotion.com/submuscle/13.1,,22,abs
 Rectus Capitis Anterior,https://app.strength.muscleandmotion.com/submuscle/74,,,
 Rectus Capitis Lateralis,https://app.strength.muscleandmotion.com/submuscle/74.1,,,
@@ -223,7 +223,7 @@ Teres Minor,https://app.strength.muscleandmotion.com/submuscle/28,,16,shoulders
 Thyrohyoid,https://app.strength.muscleandmotion.com/submuscle/101,,,
 Tibialis Anterior,https://app.strength.muscleandmotion.com/submuscle/9,,21,calves
 Tibialis Posterior,https://app.strength.muscleandmotion.com/submuscle/52,,28,calves
-Transversospinales Muscles,https://app.strength.muscleandmotion.com/submuscle/22,,,
+Transversospinales Muscles,https://app.strength.muscleandmotion.com/submuscle/22,,32,
 Transversus Abdominis,https://app.strength.muscleandmotion.com/submuscle/13.4,,22,abs
 Transversus Thoracis,https://app.strength.muscleandmotion.com/submuscle/100,,,
 Trapezius,https://app.strength.muscleandmotion.com/submuscle/2,,33,upper_back
@@ -235,7 +235,7 @@ Upper Trapezius,https://app.strength.muscleandmotion.com/submuscle/2.1,Trapezius
 Vastus Intermedius,https://app.strength.muscleandmotion.com/submuscle/7.4,,23,quadriceps
 Vastus Lateralis,https://app.strength.muscleandmotion.com/submuscle/7.2,,35,quadriceps
 Vastus Medialis,https://app.strength.muscleandmotion.com/submuscle/7.3,,36,quadriceps
-Wrist Extensors,https://app.strength.muscleandmotion.com/submuscle/4,,,
-Wrist Flexors,https://app.strength.muscleandmotion.com/submuscle/14,,,
+Wrist Extensors,https://app.strength.muscleandmotion.com/submuscle/4,,8,
+Wrist Flexors,https://app.strength.muscleandmotion.com/submuscle/14,,10,
 Zygomaticus Major (7),https://app.strength.muscleandmotion.com/submuscle/80.7,Muscles of Facial Expression,,
 Zygomaticus Minor (6),https://app.strength.muscleandmotion.com/submuscle/80.6,Muscles of Facial Expression,,
