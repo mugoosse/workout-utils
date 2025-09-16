@@ -12,8 +12,8 @@ Adductor Magnus,https://app.strength.muscleandmotion.com/submuscle/6.1,Hip Adduc
 Adductor Pollicis (4),https://app.strength.muscleandmotion.com/submuscle/57.4,Intrinsic Muscles of the Thumb,,
 Anconeus,https://app.strength.muscleandmotion.com/submuscle/29,,34,triceps
 Anterior Deltoid,https://app.strength.muscleandmotion.com/submuscle/3.1,,7,shoulders
-Anterior Scalene,https://app.strength.muscleandmotion.com/submuscle/71.1,,,
-Articularis Genu,https://app.strength.muscleandmotion.com/submuscle/99,,,
+Anterior Scalene,https://app.strength.muscleandmotion.com/submuscle/71.1,,29,upper_back
+Articularis Genu,https://app.strength.muscleandmotion.com/submuscle/99,,23,quadriceps
 Biceps Brachii,https://app.strength.muscleandmotion.com/submuscle/30,,3,biceps
 "Biceps Brachii, long head",https://app.strength.muscleandmotion.com/submuscle/30.2,,3,biceps
 "Biceps Brachii, short head",https://app.strength.muscleandmotion.com/submuscle/30.1,,3,biceps
@@ -32,7 +32,7 @@ Depressor Labii Inferioris (14),https://app.strength.muscleandmotion.com/submusc
 Diaphragm,https://app.strength.muscleandmotion.com/submuscle/63,,,
 Diaphragm Muscle (Respiration),https://app.strength.muscleandmotion.com/submuscle/81.5,,,
 Diaphragm Muscle (Respiration),https://app.strength.muscleandmotion.com/submuscle/67.3,,,
-Digastric,https://app.strength.muscleandmotion.com/submuscle/77.3,,,
+Digastric,https://app.strength.muscleandmotion.com/submuscle/77.3,,19,upper_back
 Dorsal Interossei (2),https://app.strength.muscleandmotion.com/submuscle/62.2,Sole of Foot (4th Plantar Layer),,
 Dorsal Interossei of the Hand,https://app.strength.muscleandmotion.com/submuscle/85.1,,,
 Erector Spinae,https://app.strength.muscleandmotion.com/submuscle/21,,32,lower_back
@@ -42,70 +42,70 @@ Extensor Carpi Radialis Longus,https://app.strength.muscleandmotion.com/submuscl
 Extensor Carpi Radialis Longus (2),https://app.strength.muscleandmotion.com/submuscle/4.2,Wrist Extensors,8,
 Extensor Carpi Ulnaris,https://app.strength.muscleandmotion.com/submuscle/86.1,,8,
 Extensor Carpi Ulnaris (4),https://app.strength.muscleandmotion.com/submuscle/4.4,Wrist Extensors,8,
-Extensor Digiti Minimi (6),https://app.strength.muscleandmotion.com/submuscle/4.6,Wrist Extensors,,
-Extensor Digitorum (1),https://app.strength.muscleandmotion.com/submuscle/4.1,Wrist Extensors,,
+Extensor Digiti Minimi (6),https://app.strength.muscleandmotion.com/submuscle/4.6,Wrist Extensors,8,biceps
+Extensor Digitorum (1),https://app.strength.muscleandmotion.com/submuscle/4.1,Wrist Extensors,8,biceps
 Extensor Digitorum Brevis,https://app.strength.muscleandmotion.com/submuscle/97,,,
 Extensor Digitorum Longus,https://app.strength.muscleandmotion.com/submuscle/35,,,
 Extensor Hallucis Brevis,https://app.strength.muscleandmotion.com/submuscle/98,,,
 Extensor Hallucis Longus,https://app.strength.muscleandmotion.com/submuscle/36,,,
-Extensor Indicis (5),https://app.strength.muscleandmotion.com/submuscle/4.5,Wrist Extensors,,
+Extensor Indicis (5),https://app.strength.muscleandmotion.com/submuscle/4.5,Wrist Extensors,8,biceps
 Extensor Pollicis Brevis (3),https://app.strength.muscleandmotion.com/submuscle/56.3,Extrinsic Muscles of the Thumb,,
 Extensor Pollicis Longus (2),https://app.strength.muscleandmotion.com/submuscle/56.2,Extrinsic Muscles of the Thumb,,
-External Intercostal,https://app.strength.muscleandmotion.com/submuscle/66.1,,,
+External Intercostal,https://app.strength.muscleandmotion.com/submuscle/66.1,,27,chest
 External Oblique,https://app.strength.muscleandmotion.com/submuscle/13.3,,9,abs
-Extrinsic Muscles of the Thumb,https://app.strength.muscleandmotion.com/submuscle/56,,,
+Extrinsic Muscles of the Thumb,https://app.strength.muscleandmotion.com/submuscle/56,,8,biceps
 Flexor Carpi Radialis (3),https://app.strength.muscleandmotion.com/submuscle/14.3,Wrist Flexors,10,
 Flexor Carpi Ulnaris (5),https://app.strength.muscleandmotion.com/submuscle/14.5,Wrist Flexors,11,
-Flexor Digiti Minimi,https://app.strength.muscleandmotion.com/submuscle/68.2,,,
+Flexor Digiti Minimi,https://app.strength.muscleandmotion.com/submuscle/68.2,,11,biceps
 Flexor Digiti Minimi Brevis (3),https://app.strength.muscleandmotion.com/submuscle/61.3,Sole of Foot (3rd Plantar Layer),,
 Flexor Digitorum Brevis (2),https://app.strength.muscleandmotion.com/submuscle/59.2,Sole of Foot (1st Plantar Layer),,
 Flexor Digitorum Longus,https://app.strength.muscleandmotion.com/submuscle/37,,,
-Flexor Digitorum Profundus (1),https://app.strength.muscleandmotion.com/submuscle/14.1,Wrist Flexors,,
-Flexor Digitorum Superficialis (2),https://app.strength.muscleandmotion.com/submuscle/14.2,Wrist Flexors,,
+Flexor Digitorum Profundus (1),https://app.strength.muscleandmotion.com/submuscle/14.1,Wrist Flexors,10,biceps
+Flexor Digitorum Superficialis (2),https://app.strength.muscleandmotion.com/submuscle/14.2,Wrist Flexors,10,biceps
 Flexor Hallucis Brevis (1),https://app.strength.muscleandmotion.com/submuscle/61.1,Sole of Foot (3rd Plantar Layer),,
 Flexor Hallucis Longus,https://app.strength.muscleandmotion.com/submuscle/38,,,
 Flexor Pollicis Brevis (2),https://app.strength.muscleandmotion.com/submuscle/57.2,Intrinsic Muscles of the Thumb,,
 Flexor Pollicis Longus (4),https://app.strength.muscleandmotion.com/submuscle/56.4,Extrinsic Muscles of the Thumb,,
 Frontalis (1),https://app.strength.muscleandmotion.com/submuscle/80.1,Muscles of Facial Expression,,
 Gastrocnemius,https://app.strength.muscleandmotion.com/submuscle/39,,12,calves
-Geniohyoid,https://app.strength.muscleandmotion.com/submuscle/77.1,,,
+Geniohyoid,https://app.strength.muscleandmotion.com/submuscle/77.1,,19,upper_back
 Gluteus Maximus,https://app.strength.muscleandmotion.com/submuscle/41,,13,glutes
 Gluteus Medius,https://app.strength.muscleandmotion.com/submuscle/42,,14,glutes
 Gluteus Minimus,https://app.strength.muscleandmotion.com/submuscle/43,,14,glutes
 Gracilis,https://app.strength.muscleandmotion.com/submuscle/6.5,Hip Adductor Muscles,15,hamstrings
 Hamstrings,https://app.strength.muscleandmotion.com/submuscle/33,,4,
 Hip Adductor Muscles,https://app.strength.muscleandmotion.com/submuscle/6,,15,
-Hip External Rotators (Deep Layer),https://app.strength.muscleandmotion.com/submuscle/44,,,
-Hypothenar Eminence,https://app.strength.muscleandmotion.com/submuscle/68,,,
-Iliacus,https://app.strength.muscleandmotion.com/submuscle/10,,,
+Hip External Rotators (Deep Layer),https://app.strength.muscleandmotion.com/submuscle/44,,13,glutes
+Hypothenar Eminence,https://app.strength.muscleandmotion.com/submuscle/68,,11,biceps
+Iliacus,https://app.strength.muscleandmotion.com/submuscle/10,,1,quadriceps
 Iliococcygeus,https://app.strength.muscleandmotion.com/submuscle/82.4,,,
-Iliocostalis,https://app.strength.muscleandmotion.com/submuscle/21.1,,,
-Inferior Gemellus (Hip Rotators) (5),https://app.strength.muscleandmotion.com/submuscle/44.5,Hip External Rotators (Deep Layer),,
+Iliocostalis,https://app.strength.muscleandmotion.com/submuscle/21.1,,32,lower_back
+Inferior Gemellus (Hip Rotators) (5),https://app.strength.muscleandmotion.com/submuscle/44.5,Hip External Rotators (Deep Layer),13,glutes
 Inferior Oblique Part,https://app.strength.muscleandmotion.com/submuscle/73.3,,9,abs
 Infraspinatus,https://app.strength.muscleandmotion.com/submuscle/16,,16,shoulders
-Innermost Intercostal,https://app.strength.muscleandmotion.com/submuscle/66.3,,,
-Intercostal Muscles,https://app.strength.muscleandmotion.com/submuscle/66,,,
-Intercostal Muscles (Respiration),https://app.strength.muscleandmotion.com/submuscle/81.4,,,
-Intercostal Muscles (Respiration),https://app.strength.muscleandmotion.com/submuscle/67.2,,,
-Internal Intercostal,https://app.strength.muscleandmotion.com/submuscle/66.2,,,
+Innermost Intercostal,https://app.strength.muscleandmotion.com/submuscle/66.3,,27,chest
+Intercostal Muscles,https://app.strength.muscleandmotion.com/submuscle/66,,27,chest
+Intercostal Muscles (Respiration),https://app.strength.muscleandmotion.com/submuscle/81.4,,27,chest
+Intercostal Muscles (Respiration),https://app.strength.muscleandmotion.com/submuscle/67.2,,27,chest
+Internal Intercostal,https://app.strength.muscleandmotion.com/submuscle/66.2,,27,chest
 Internal Oblique,https://app.strength.muscleandmotion.com/submuscle/13.2,,9,abs
-Intersegmental Muscles,https://app.strength.muscleandmotion.com/submuscle/23,,,
-Interspinalis,https://app.strength.muscleandmotion.com/submuscle/23.1,,,
-Intertransversarii,https://app.strength.muscleandmotion.com/submuscle/23.2,,,
+Intersegmental Muscles,https://app.strength.muscleandmotion.com/submuscle/23,,32,lower_back
+Interspinalis,https://app.strength.muscleandmotion.com/submuscle/23.1,,32,lower_back
+Intertransversarii,https://app.strength.muscleandmotion.com/submuscle/23.2,,32,lower_back
 Intrinsic Muscles of the Thumb,https://app.strength.muscleandmotion.com/submuscle/57,,,
 Lateral Pterygoid,https://app.strength.muscleandmotion.com/submuscle/79.2,,,
 Latissimus Dorsi,https://app.strength.muscleandmotion.com/submuscle/54,,17,lats
 Latissimus Dorsi (Respiration),https://app.strength.muscleandmotion.com/submuscle/81.7,,17,lats
 Levator Anguli Oris (8),https://app.strength.muscleandmotion.com/submuscle/80.8,Muscles of Facial Expression,,
-Levator Costarum,https://app.strength.muscleandmotion.com/submuscle/88.1,,,
-Levator Costarum,https://app.strength.muscleandmotion.com/submuscle/23.3,,,
-Levator Costarum (Respiration),https://app.strength.muscleandmotion.com/submuscle/81.12,,,
+Levator Costarum,https://app.strength.muscleandmotion.com/submuscle/88.1,,27,chest
+Levator Costarum,https://app.strength.muscleandmotion.com/submuscle/23.3,,27,chest
+Levator Costarum (Respiration),https://app.strength.muscleandmotion.com/submuscle/81.12,,27,chest
 Levator Labii Superioris Alaeque Nasi (16),https://app.strength.muscleandmotion.com/submuscle/80.17,,,
 Levator Scapulae,https://app.strength.muscleandmotion.com/submuscle/17,,33,upper_back
-Longissimus,https://app.strength.muscleandmotion.com/submuscle/21.2,,,
+Longissimus,https://app.strength.muscleandmotion.com/submuscle/21.2,,32,lower_back
 Longitudinal Part (Vertical),https://app.strength.muscleandmotion.com/submuscle/73.1,,,
-Longus Capitis,https://app.strength.muscleandmotion.com/submuscle/75,,,
-Longus Colli,https://app.strength.muscleandmotion.com/submuscle/73,,,
+Longus Capitis,https://app.strength.muscleandmotion.com/submuscle/75,,29,upper_back
+Longus Colli,https://app.strength.muscleandmotion.com/submuscle/73,,29,upper_back
 Lower Trapezius,https://app.strength.muscleandmotion.com/submuscle/2.3,Trapezius,33,upper_back
 Lumbrical Muscles,https://app.strength.muscleandmotion.com/submuscle/60.2,,,
 Lumbrical Muscles of the Hand,https://app.strength.muscleandmotion.com/submuscle/93,,,
@@ -114,26 +114,26 @@ Masseter (11),https://app.strength.muscleandmotion.com/submuscle/80.12,,,
 Medial Pterygoid,https://app.strength.muscleandmotion.com/submuscle/79.1,,,
 Mentalis (15),https://app.strength.muscleandmotion.com/submuscle/80.16,,,
 Middle Deltoid,https://app.strength.muscleandmotion.com/submuscle/3.2,,7,shoulders
-Middle Scalene,https://app.strength.muscleandmotion.com/submuscle/71.2,,,
+Middle Scalene,https://app.strength.muscleandmotion.com/submuscle/71.2,,29,upper_back
 Middle Trapezius,https://app.strength.muscleandmotion.com/submuscle/2.2,Trapezius,33,upper_back
 Multifidus,https://app.strength.muscleandmotion.com/submuscle/22.2,,32,
 Muscles of Facial Expression,https://app.strength.muscleandmotion.com/submuscle/80,,,
 Muscles of Forced Respiration,https://app.strength.muscleandmotion.com/submuscle/81,,,
 Muscles of Quiet Respiration,https://app.strength.muscleandmotion.com/submuscle/67,,,
-Mylohyoid,https://app.strength.muscleandmotion.com/submuscle/77.2,,,
+Mylohyoid,https://app.strength.muscleandmotion.com/submuscle/77.2,,19,upper_back
 Nasalis (5),https://app.strength.muscleandmotion.com/submuscle/80.5,Muscles of Facial Expression,,
-Obliquus Capitis Inferior,https://app.strength.muscleandmotion.com/submuscle/65.4,,,
-Obliquus Capitis Superior,https://app.strength.muscleandmotion.com/submuscle/65.3,,,
-Obturator Externus (Hip Rotators) (1),https://app.strength.muscleandmotion.com/submuscle/44.1,Hip External Rotators (Deep Layer),,
-Obturator Internus (Hip Rotators) (2),https://app.strength.muscleandmotion.com/submuscle/44.2,Hip External Rotators (Deep Layer),,
+Obliquus Capitis Inferior,https://app.strength.muscleandmotion.com/submuscle/65.4,,32,lower_back
+Obliquus Capitis Superior,https://app.strength.muscleandmotion.com/submuscle/65.3,,32,lower_back
+Obturator Externus (Hip Rotators) (1),https://app.strength.muscleandmotion.com/submuscle/44.1,Hip External Rotators (Deep Layer),13,glutes
+Obturator Internus (Hip Rotators) (2),https://app.strength.muscleandmotion.com/submuscle/44.2,Hip External Rotators (Deep Layer),13,glutes
 Omohyoid,https://app.strength.muscleandmotion.com/submuscle/94,,19,
-Opponens Digiti Minimi,https://app.strength.muscleandmotion.com/submuscle/68.1,,,
+Opponens Digiti Minimi,https://app.strength.muscleandmotion.com/submuscle/68.1,,11,biceps
 Opponens Digiti Minimi (4),https://app.strength.muscleandmotion.com/submuscle/61.4,Sole of Foot (3rd Plantar Layer),,
 Opponens Pollicis (3),https://app.strength.muscleandmotion.com/submuscle/57.3,Intrinsic Muscles of the Thumb,,
 Orbicularis Oculi (4),https://app.strength.muscleandmotion.com/submuscle/80.4,Muscles of Facial Expression,,
 Orbicularis Oris (12),https://app.strength.muscleandmotion.com/submuscle/80.13,,,
 Palmar Interosseous Muscles,https://app.strength.muscleandmotion.com/submuscle/69,,,
-Palmaris Brevis,https://app.strength.muscleandmotion.com/submuscle/83.1,,,
+Palmaris Brevis,https://app.strength.muscleandmotion.com/submuscle/83.1,,10,biceps
 Palmaris Longus (4),https://app.strength.muscleandmotion.com/submuscle/14.4,Wrist Flexors,10,
 Pectineus,https://app.strength.muscleandmotion.com/submuscle/6.2,Hip Adductor Muscles,1,quadriceps
 Pectoralis Major,https://app.strength.muscleandmotion.com/submuscle/1,,20,chest
@@ -147,85 +147,85 @@ Pelvic Diaphragm,https://app.strength.muscleandmotion.com/submuscle/82,,,
 Peroneus Brevis,https://app.strength.muscleandmotion.com/submuscle/48,,21,calves
 Peroneus Longus,https://app.strength.muscleandmotion.com/submuscle/49,,21,calves
 Peroneus Tertius,https://app.strength.muscleandmotion.com/submuscle/50,,21,calves
-Piriformis (Hip Rotators) (3),https://app.strength.muscleandmotion.com/submuscle/44.3,Hip External Rotators (Deep Layer),,
+Piriformis (Hip Rotators) (3),https://app.strength.muscleandmotion.com/submuscle/44.3,Hip External Rotators (Deep Layer),13,glutes
 Plantar Interossei (1),https://app.strength.muscleandmotion.com/submuscle/62.1,Sole of Foot (4th Plantar Layer),,
 Plantaris,https://app.strength.muscleandmotion.com/submuscle/90.1,,12,calves
-Platysma,https://app.strength.muscleandmotion.com/submuscle/95,,,
-Popliteus,https://app.strength.muscleandmotion.com/submuscle/51,,,
+Platysma,https://app.strength.muscleandmotion.com/submuscle/95,,29,upper_back
+Popliteus,https://app.strength.muscleandmotion.com/submuscle/51,,4,hamstrings
 Posterior Deltoid,https://app.strength.muscleandmotion.com/submuscle/3.3,,7,shoulders
-Posterior Scalene,https://app.strength.muscleandmotion.com/submuscle/71.3,,,
+Posterior Scalene,https://app.strength.muscleandmotion.com/submuscle/71.3,,29,upper_back
 Procerus (3),https://app.strength.muscleandmotion.com/submuscle/80.3,Muscles of Facial Expression,,
-Pronator Quadratus,https://app.strength.muscleandmotion.com/submuscle/19,,,
-Pronator Teres,https://app.strength.muscleandmotion.com/submuscle/20,,,
-Psoas Major,https://app.strength.muscleandmotion.com/submuscle/11,,,
-Psoas Minor,https://app.strength.muscleandmotion.com/submuscle/96,,,
+Pronator Quadratus,https://app.strength.muscleandmotion.com/submuscle/19,,6,biceps
+Pronator Teres,https://app.strength.muscleandmotion.com/submuscle/20,,6,biceps
+Psoas Major,https://app.strength.muscleandmotion.com/submuscle/11,,1,quadriceps
+Psoas Minor,https://app.strength.muscleandmotion.com/submuscle/96,,1,quadriceps
 Pterygoid Muscles,https://app.strength.muscleandmotion.com/submuscle/79,,,
 Pubococcygeus,https://app.strength.muscleandmotion.com/submuscle/82.3,,,
 Puborectalis,https://app.strength.muscleandmotion.com/submuscle/82.2,,,
-Quadratus Femoris (Hip Rotators) (4),https://app.strength.muscleandmotion.com/submuscle/44.4,Hip External Rotators (Deep Layer),,
+Quadratus Femoris (Hip Rotators) (4),https://app.strength.muscleandmotion.com/submuscle/44.4,Hip External Rotators (Deep Layer),13,glutes
 Quadratus Lumborum,https://app.strength.muscleandmotion.com/submuscle/70,,32,
-Quadratus Lumborum (Respiration),https://app.strength.muscleandmotion.com/submuscle/81.13,,,
+Quadratus Lumborum (Respiration),https://app.strength.muscleandmotion.com/submuscle/81.13,,32,lower_back
 Quadratus Plantae,https://app.strength.muscleandmotion.com/submuscle/60.1,,,
 Quadriceps Femoris,https://app.strength.muscleandmotion.com/submuscle/7,,23,
 Rectus Abdominis,https://app.strength.muscleandmotion.com/submuscle/13.1,,22,abs
-Rectus Capitis Anterior,https://app.strength.muscleandmotion.com/submuscle/74,,,
-Rectus Capitis Lateralis,https://app.strength.muscleandmotion.com/submuscle/74.1,,,
-Rectus Capitis Posterior Major,https://app.strength.muscleandmotion.com/submuscle/65.1,,,
-Rectus Capitis Posterior Minor,https://app.strength.muscleandmotion.com/submuscle/65.2,,,
+Rectus Capitis Anterior,https://app.strength.muscleandmotion.com/submuscle/74,,29,upper_back
+Rectus Capitis Lateralis,https://app.strength.muscleandmotion.com/submuscle/74.1,,29,upper_back
+Rectus Capitis Posterior Major,https://app.strength.muscleandmotion.com/submuscle/65.1,,32,lower_back
+Rectus Capitis Posterior Minor,https://app.strength.muscleandmotion.com/submuscle/65.2,,32,lower_back
 Rectus Femoris,https://app.strength.muscleandmotion.com/submuscle/7.1,,23,quadriceps
 Rhomboid Major,https://app.strength.muscleandmotion.com/submuscle/53.1,Rhomboid Muscles,24,upper_back
 Rhomboid Minor,https://app.strength.muscleandmotion.com/submuscle/53.2,Rhomboid Muscles,24,upper_back
 Rhomboid Muscles,https://app.strength.muscleandmotion.com/submuscle/53,,24,upper_back
 Risorius (9),https://app.strength.muscleandmotion.com/submuscle/80.9,Muscles of Facial Expression,,
-Rotatores,https://app.strength.muscleandmotion.com/submuscle/22.3,,,
+Rotatores,https://app.strength.muscleandmotion.com/submuscle/22.3,,32,lower_back
 Sartorius,https://app.strength.muscleandmotion.com/submuscle/8,,25,quadriceps
-Scalene Muscles,https://app.strength.muscleandmotion.com/submuscle/71,,,
-Scalene Muscles (Respiration),https://app.strength.muscleandmotion.com/submuscle/81.1,,,
-Scalene Muscles (Respiration),https://app.strength.muscleandmotion.com/submuscle/67.1,,,
+Scalene Muscles,https://app.strength.muscleandmotion.com/submuscle/71,,29,upper_back
+Scalene Muscles (Respiration),https://app.strength.muscleandmotion.com/submuscle/81.1,,29,upper_back
+Scalene Muscles (Respiration),https://app.strength.muscleandmotion.com/submuscle/67.1,,29,upper_back
 Semimembranosus (Hamstring) (1),https://app.strength.muscleandmotion.com/submuscle/33.1,Hamstrings,26,hamstrings
-Semispinalis Capitis,https://app.strength.muscleandmotion.com/submuscle/22.4,,,
-Semispinalis Cervicis,https://app.strength.muscleandmotion.com/submuscle/22.5,,,
-Semispinalis Thoracis,https://app.strength.muscleandmotion.com/submuscle/22.1,,,
+Semispinalis Capitis,https://app.strength.muscleandmotion.com/submuscle/22.4,,32,lower_back
+Semispinalis Cervicis,https://app.strength.muscleandmotion.com/submuscle/22.5,,32,lower_back
+Semispinalis Thoracis,https://app.strength.muscleandmotion.com/submuscle/22.1,,32,lower_back
 Semitendinosus (Hamstring) (2),https://app.strength.muscleandmotion.com/submuscle/33.2,Hamstrings,26,hamstrings
 Serratus Anterior,https://app.strength.muscleandmotion.com/submuscle/12,,27,chest
-Serratus Posterior,https://app.strength.muscleandmotion.com/submuscle/64,,,
-Serratus Posterior Inferior,https://app.strength.muscleandmotion.com/submuscle/64.2,,,
-Serratus Posterior Inferior (Respiration),https://app.strength.muscleandmotion.com/submuscle/81.9,,,
-Serratus Posterior Superior,https://app.strength.muscleandmotion.com/submuscle/64.1,,,
-Serratus Posterior Superior (Respiration),https://app.strength.muscleandmotion.com/submuscle/81.8,,,
+Serratus Posterior,https://app.strength.muscleandmotion.com/submuscle/64,,27,chest
+Serratus Posterior Inferior,https://app.strength.muscleandmotion.com/submuscle/64.2,,27,chest
+Serratus Posterior Inferior (Respiration),https://app.strength.muscleandmotion.com/submuscle/81.9,,27,chest
+Serratus Posterior Superior,https://app.strength.muscleandmotion.com/submuscle/64.1,,27,chest
+Serratus Posterior Superior (Respiration),https://app.strength.muscleandmotion.com/submuscle/81.8,,27,chest
 Sole of Foot (1st Plantar Layer),https://app.strength.muscleandmotion.com/submuscle/59,,,
 Sole of Foot (2nd Plantar Layer),https://app.strength.muscleandmotion.com/submuscle/60,,,
 Sole of Foot (3rd Plantar Layer),https://app.strength.muscleandmotion.com/submuscle/61,,,
 Sole of Foot (4th Plantar Layer),https://app.strength.muscleandmotion.com/submuscle/62,,,
 Soleus,https://app.strength.muscleandmotion.com/submuscle/40,,28,calves
-Spinalis,https://app.strength.muscleandmotion.com/submuscle/21.3,,,
-Splenius Capitis,https://app.strength.muscleandmotion.com/submuscle/72.1,,,
-Splenius Capitis & Cervicis,https://app.strength.muscleandmotion.com/submuscle/72,,,
-Splenius Cervicis,https://app.strength.muscleandmotion.com/submuscle/72.2,,,
+Spinalis,https://app.strength.muscleandmotion.com/submuscle/21.3,,32,lower_back
+Splenius Capitis,https://app.strength.muscleandmotion.com/submuscle/72.1,,33,upper_back
+Splenius Capitis & Cervicis,https://app.strength.muscleandmotion.com/submuscle/72,,33,upper_back
+Splenius Cervicis,https://app.strength.muscleandmotion.com/submuscle/72.2,,33,upper_back
 Sternocleidomastoid,https://app.strength.muscleandmotion.com/submuscle/45,,29,
 Sternocleidomastoid (Respiration),https://app.strength.muscleandmotion.com/submuscle/81.2,,29,
-Sternohyoid,https://app.strength.muscleandmotion.com/submuscle/89.1,,,
-Sternothyroid,https://app.strength.muscleandmotion.com/submuscle/103,,,
-Stylohyoid,https://app.strength.muscleandmotion.com/submuscle/77.4,,,
-Subclavius,https://app.strength.muscleandmotion.com/submuscle/87.1,,,
-Suboccipital Muscles,https://app.strength.muscleandmotion.com/submuscle/65,,,
-Subscapularis,https://app.strength.muscleandmotion.com/submuscle/24,,,
+Sternohyoid,https://app.strength.muscleandmotion.com/submuscle/89.1,,19,upper_back
+Sternothyroid,https://app.strength.muscleandmotion.com/submuscle/103,,19,upper_back
+Stylohyoid,https://app.strength.muscleandmotion.com/submuscle/77.4,,19,upper_back
+Subclavius,https://app.strength.muscleandmotion.com/submuscle/87.1,,20,chest
+Suboccipital Muscles,https://app.strength.muscleandmotion.com/submuscle/65,,32,lower_back
+Subscapularis,https://app.strength.muscleandmotion.com/submuscle/24,,16,shoulders
 Superficial Layer,https://app.strength.muscleandmotion.com/submuscle/78.1,,,
-Superior Gemellus (Hip Rotators) (6),https://app.strength.muscleandmotion.com/submuscle/44.6,Hip External Rotators (Deep Layer),,
+Superior Gemellus (Hip Rotators) (6),https://app.strength.muscleandmotion.com/submuscle/44.6,Hip External Rotators (Deep Layer),13,glutes
 Superior Oblique Part,https://app.strength.muscleandmotion.com/submuscle/73.2,,9,abs
-Supinator,https://app.strength.muscleandmotion.com/submuscle/25,,,
-Suprahyoid Muscles,https://app.strength.muscleandmotion.com/submuscle/77,,,
+Supinator,https://app.strength.muscleandmotion.com/submuscle/25,,6,biceps
+Suprahyoid Muscles,https://app.strength.muscleandmotion.com/submuscle/77,,19,upper_back
 Supraspinatus,https://app.strength.muscleandmotion.com/submuscle/26,,7,shoulders
 Temporalis,https://app.strength.muscleandmotion.com/submuscle/76,,,
 Tensor Fasciae Latae,https://app.strength.muscleandmotion.com/submuscle/46,,30,glutes
 Teres Major,https://app.strength.muscleandmotion.com/submuscle/27,,31,shoulders
 Teres Minor,https://app.strength.muscleandmotion.com/submuscle/28,,16,shoulders
-Thyrohyoid,https://app.strength.muscleandmotion.com/submuscle/101,,,
+Thyrohyoid,https://app.strength.muscleandmotion.com/submuscle/101,,19,upper_back
 Tibialis Anterior,https://app.strength.muscleandmotion.com/submuscle/9,,21,calves
 Tibialis Posterior,https://app.strength.muscleandmotion.com/submuscle/52,,28,calves
 Transversospinales Muscles,https://app.strength.muscleandmotion.com/submuscle/22,,32,
 Transversus Abdominis,https://app.strength.muscleandmotion.com/submuscle/13.4,,22,abs
-Transversus Thoracis,https://app.strength.muscleandmotion.com/submuscle/100,,,
+Transversus Thoracis,https://app.strength.muscleandmotion.com/submuscle/100,,27,chest
 Trapezius,https://app.strength.muscleandmotion.com/submuscle/2,,33,upper_back
 Triceps Brachii,https://app.strength.muscleandmotion.com/submuscle/5,,34,triceps
 "Triceps Brachii, Lateral Head",https://app.strength.muscleandmotion.com/submuscle/5.2,Triceps Brachii,34,triceps
