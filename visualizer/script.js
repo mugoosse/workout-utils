@@ -12,7 +12,7 @@ class MuscleAnatomyApp {
     };
     this.activeTab = "exercise";
     this.currentProgression = 50;
-    this.colorPalette = ["#B9FAF8", "#B8D0EB", "#B298DC", "#A663CC", "#6F2DBD"];
+    this.colorPalette = ["#E9FF70", "#B8D0EB", "#B298DC", "#A663CC", "#6F2DBD"];
     this.init();
   }
 
