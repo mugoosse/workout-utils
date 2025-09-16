@@ -10,44 +10,72 @@
     <div class="container">
         <header>
             <h1>Interactive Muscle Anatomy</h1>
+            <div class="tab-navigation">
+                <button id="exercise-tab" class="tab-button active">Exercise View</button>
+                <button id="progression-tab" class="tab-button">Progression View</button>
+            </div>
+        </header>
+
+        <div id="exercise-view" class="tab-content active">
             <div class="controls">
                 <label for="exercise-select">Select Exercise:</label>
                 <select id="exercise-select">
                     <option value="">Loading exercises...</option>
                 </select>
             </div>
-        </header>
 
-        <div class="legend">
-            <h3>Muscle Function Legend</h3>
-            <div class="legend-items">
-                <div class="legend-item">
-                    <input type="checkbox" id="toggle-target" class="muscle-toggle" checked>
-                    <label for="toggle-target" class="legend-label">
-                        <div class="color-box target"></div>
-                        <span>Target Muscles (Primary Movers)</span>
-                    </label>
+            <div class="legend">
+                <h3>Muscle Function Legend</h3>
+                <div class="legend-items">
+                    <div class="legend-item">
+                        <input type="checkbox" id="toggle-target" class="muscle-toggle" checked>
+                        <label for="toggle-target" class="legend-label">
+                            <div class="color-box target"></div>
+                            <span>Target Muscles (Primary Movers)</span>
+                        </label>
+                    </div>
+                    <div class="legend-item">
+                        <input type="checkbox" id="toggle-synergist" class="muscle-toggle" checked>
+                        <label for="toggle-synergist" class="legend-label">
+                            <div class="color-box synergist"></div>
+                            <span>Synergist Muscles (Assisters)</span>
+                        </label>
+                    </div>
+                    <div class="legend-item">
+                        <input type="checkbox" id="toggle-stabilizer" class="muscle-toggle" checked>
+                        <label for="toggle-stabilizer" class="legend-label">
+                            <div class="color-box stabilizer"></div>
+                            <span>Stabilizer Muscles</span>
+                        </label>
+                    </div>
+                    <div class="legend-item">
+                        <input type="checkbox" id="toggle-lengthening" class="muscle-toggle" checked>
+                        <label for="toggle-lengthening" class="legend-label">
+                            <div class="color-box lengthening"></div>
+                            <span>Lengthening Muscles (Antagonists)</span>
+                        </label>
+                    </div>
                 </div>
-                <div class="legend-item">
-                    <input type="checkbox" id="toggle-synergist" class="muscle-toggle" checked>
-                    <label for="toggle-synergist" class="legend-label">
-                        <div class="color-box synergist"></div>
-                        <span>Synergist Muscles (Assisters)</span>
-                    </label>
+            </div>
+        </div>
+
+        <div id="progression-view" class="tab-content">
+            <div class="progression-controls">
+                <div class="progression-slider-container">
+                    <label for="progression-slider">Muscle Progression (0-100):</label>
+                    <input type="range" id="progression-slider" min="0" max="100" value="50" class="progression-slider">
+                    <span id="progression-value">50</span>
                 </div>
-                <div class="legend-item">
-                    <input type="checkbox" id="toggle-stabilizer" class="muscle-toggle" checked>
-                    <label for="toggle-stabilizer" class="legend-label">
-                        <div class="color-box stabilizer"></div>
-                        <span>Stabilizer Muscles</span>
-                    </label>
-                </div>
-                <div class="legend-item">
-                    <input type="checkbox" id="toggle-lengthening" class="muscle-toggle" checked>
-                    <label for="toggle-lengthening" class="legend-label">
-                        <div class="color-box lengthening"></div>
-                        <span>Lengthening Muscles (Antagonists)</span>
-                    </label>
+
+                <div class="color-palette-editor">
+                    <h3>Color Palette Editor</h3>
+                    <div id="color-palette-container">
+                        <!-- Color inputs will be dynamically generated here -->
+                    </div>
+                    <div class="palette-buttons">
+                        <button id="add-color-btn" class="palette-btn">Add Color</button>
+                        <button id="remove-color-btn" class="palette-btn">Remove Color</button>
+                    </div>
                 </div>
             </div>
         </div>

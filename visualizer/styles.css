@@ -32,11 +32,56 @@ header h1 {
     font-size: 2.5em;
 }
 
+/* Tab Navigation */
+.tab-navigation {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.tab-button {
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    border: 2px solid #3498db;
+    border-radius: 8px;
+    background: white;
+    color: #3498db;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tab-button:hover {
+    background: #ecf0f1;
+    transform: translateY(-2px);
+}
+
+.tab-button.active {
+    background: #3498db;
+    color: white;
+    box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
+}
+
+/* Tab Content */
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
 .controls {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 15px;
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 .controls label {
@@ -208,6 +253,156 @@ svg path {
     stroke-width: 0.5;
 }
 
+/* Progression Controls */
+.progression-controls {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.progression-slider-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+}
+
+.progression-slider-container label {
+    font-weight: bold;
+    color: #2c3e50;
+    font-size: 1.1em;
+}
+
+.progression-slider {
+    width: 300px;
+    height: 8px;
+    border-radius: 5px;
+    background: #ddd;
+    outline: none;
+    -webkit-appearance: none;
+}
+
+.progression-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #3498db;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.progression-slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #3498db;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+#progression-value {
+    background: #3498db;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+    min-width: 30px;
+    text-align: center;
+}
+
+/* Color Palette Editor */
+.color-palette-editor h3 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-size: 1.4em;
+}
+
+#color-palette-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.color-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+}
+
+.color-preview {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid #333;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.color-input {
+    padding: 8px 12px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    width: 80px;
+    font-family: monospace;
+    text-transform: uppercase;
+}
+
+.color-input:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.palette-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.palette-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    border: 2px solid #27ae60;
+    border-radius: 8px;
+    background: white;
+    color: #27ae60;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.palette-btn:hover {
+    background: #27ae60;
+    color: white;
+    transform: translateY(-2px);
+}
+
+#remove-color-btn {
+    border-color: #e74c3c;
+    color: #e74c3c;
+}
+
+#remove-color-btn:hover {
+    background: #e74c3c;
+    color: white;
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
     .anatomy-container {
@@ -237,5 +432,40 @@ svg path {
     .body-view svg {
         max-width: 300px;
         max-height: 500px;
+    }
+
+    .tab-navigation {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .tab-button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .progression-slider-container {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .progression-slider {
+        width: 250px;
+    }
+
+    #color-palette-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .palette-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .palette-btn {
+        width: 100%;
+        max-width: 200px;
     }
 }

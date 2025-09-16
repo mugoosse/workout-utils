@@ -25,13 +25,13 @@ def create_muscle_name_to_svg_id_mapping():
     """Create comprehensive mapping from muscle names to SVG element IDs"""
     return {
         # Abdominals
-        "Abdominal Muscles": "rectus_abdominus",
-        "Rectus Abdominis": "rectus_abdominus",
+        "Abdominal Muscles": "rectus_abdominis",
+        "Rectus Abdominis": "rectus_abdominis",
         "External Oblique": "external_obliques",
         "Internal Oblique": "external_obliques",  # Using external as fallback
         "External obliques": "external_obliques",
         "Internal obliques": "external_obliques",
-        "Transversus Abdominis": "rectus_abdominus",
+        "Transversus Abdominis": "rectus_abdominis",
 
         # Pectoralis
         "Pectoralis Major": "pectoralis_major",
@@ -132,8 +132,8 @@ def create_muscle_name_to_svg_id_mapping():
         "Iliacus": "rectus_femoris",
 
         # Stabilizers (map to core/abs)
-        "Pelvic Diaphragm": "rectus_abdominus",
-        "Diaphragm": "rectus_abdominus",
+        "Pelvic Diaphragm": "rectus_abdominis",
+        "Diaphragm": "rectus_abdominis",
         "Transversospinales Muscles": "erector_spinae",
         "Multifidus": "erector_spinae",
         "Quadratus Lumborum": "erector_spinae",
