@@ -4,49 +4,50 @@ A collection of tools for extracting exercise data and muscle information from t
 
 ## Interactive Muscle Visualizer
 
-The visualizer provides an interactive anatomy view showing which muscles are targeted, synergist, stabilizer, or lengthening during different exercises. The visualizer dynamically loads exercise data from CSV files containing 940+ exercises from the Muscle and Motion database.
+The muscle-map application is a modern React-based interactive anatomy viewer that shows which muscles are targeted, synergist, stabilizer, or lengthening during different exercises. It dynamically loads exercise data from CSV files containing 940+ exercises from the Muscle and Motion database.
 
-### Running the Visualizer
+### Running the Muscle Map
 
-#### Quick Start with Helper Script
+#### Quick Start
 ```bash
-uv run run_visualizer.py
+cd muscle-map
+bun run dev
 ```
 This will:
-- Generate the configuration from CSV files
-- Start a local web server
-- Open the visualizer in your browser
+- Start the Vite development server with Bun
+- Open the application in your browser at `http://localhost:5173`
 
-#### Manual Method
+#### Production Build
+```bash
+cd muscle-map
+bun run build
+bun run preview
+```
 
-1. **Generate configuration from CSV data**:
-   ```bash
-   uv run generate_config.py
-   ```
-   This creates `visualizer/config_generated.json` from the exercise and muscle CSV files.
-
-2. **Start a local server**:
-   ```bash
-   cd visualizer
-   python3 -m http.server 8000
-   ```
-
-3. **Open in browser**:
-   Navigate to `http://localhost:8000`
+#### Configuration Setup
+Before running, ensure the configuration is generated from CSV data:
+```bash
+uv run generate_config.py
+```
+This creates `muscle-map/public/config_generated.json` from the exercise and muscle CSV files.
 
 ### Features
 
 - **940+ exercises**: Full database from Muscle and Motion app
-- **Dynamic data loading**: Exercise data loaded from CSV files, not hardcoded
+- **Modern React interface**: Built with React 19, TypeScript, and Tailwind CSS
 - **Interactive muscle groups**: Toggle different muscle function types on/off
+- **Dual view modes**:
+  - **Exercise View**: Select specific exercises to see muscle activation patterns
+  - **Progression View**: Visualize muscle development with customizable color palettes
 - **Muscle mapping**: Automatic mapping from muscle names to SVG anatomy elements
 - **Color-coded visualization**:
-  - Red: Target muscles (primary movers)
-  - Orange: Synergist muscles (assisters)
-  - Yellow: Stabilizer muscles
-  - Blue: Lengthening muscles (antagonists)
+  - Target muscles (primary movers)
+  - Synergist muscles (assisters)
+  - Stabilizer muscles
+  - Lengthening muscles (antagonists)
 - **Anatomical accuracy**: Based on professional muscle anatomy SVGs
-- **Responsive design**: Works on desktop and mobile devices
+- **Responsive design**: Optimized for desktop and mobile devices
+- **Fast development**: Powered by Vite and Bun for lightning-fast builds
 
 ### Data Pipeline
 
@@ -57,12 +58,13 @@ This will:
 2. **Config Generation** (`generate_config.py`):
    - Reads exercise data from CSV
    - Creates muscle name to SVG ID mappings
-   - Outputs `config_generated.json` for the visualizer
+   - Outputs `muscle-map/public/config_generated.json` for the React application
 
-3. **Visualization** (`visualizer/`):
-   - Loads generated config
-   - Dynamically populates exercise dropdown
-   - Highlights muscles in SVG based on selected exercise
+3. **Visualization** (`muscle-map/`):
+   - Modern React application with TypeScript
+   - Loads generated config via fetch API
+   - Dynamic exercise selection with type-safe components
+   - Real-time muscle highlighting in dual front/back anatomy views
 
 ## Muscle and Motion Scraper Setup
 
