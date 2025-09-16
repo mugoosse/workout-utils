@@ -1,0 +1,132 @@
+muscle,muscle_group,svg_muscle_group,broad_muscle_group,broader_muscle_group
+Abdominal Muscles,,rectus_abdominis,abs,core
+Adductor Brevis,,adductor_longus_and_pectineus,hamstrings,legs
+Adductor Longus,,adductor_longus_and_pectineus,hamstrings,legs
+Adductor Magnus,,adductor_magnus,hamstrings,legs
+Anconeus,Posterior Compartment Forearm (Superficial),triceps_brachii,,arms
+Anterior Deltoid,,deltoids,shoulders,shoulders
+Anterior Scalene,,sternocleidomastoid,,core
+Biceps Brachii,,biceps_brachii,biceps,arms
+Biceps Brachii (Long Head),Upper Arm (Anterior),biceps_brachii,biceps,arms
+Biceps Brachii (Short Head),Upper Arm (Anterior),biceps_brachii,biceps,arms
+Biceps Femoris,,biceps_femoris,hamstrings,legs
+Biceps Femoris (Long Head),Upper Thigh (Posterior),biceps_femoris,hamstrings,legs
+Biceps Femoris (Short Head),Upper Thigh (Posterior),biceps_femoris,hamstrings,legs
+Brachialis,,brachialis,biceps,arms
+Brachioradialis,,brachioradialis,biceps,arms
+Calf,,gastrocnemius,calves,legs
+Chest,,pectoralis_major,chest,chest
+Chest (Lower),,pectoralis_major,chest,chest
+Coracobrachialis,Upper Arm (Anterior),biceps_brachii,biceps,arms
+Deep Head,Upper Thigh (Anterior),rectus_femoris,quadriceps,legs
+Deltoids,,deltoids,shoulders,shoulders
+Erector Spinae (1),,erector_spinae,lower_back,back
+Erector Spinae (2),Deep Back Muscles (Intermediate),erector_spinae,lower_back,back
+External Oblique,,external_obliques,abs,core
+Extensor Carpi Radialis Brevis,Posterior Compartment Forearm (Superficial),extensor_carpi_radialis,,arms
+Extensor Carpi Radialis Longus,Posterior Compartment Forearm (Superficial),extensor_carpi_radialis,,arms
+Extensor Carpi Ulnaris,Posterior Compartment Forearm (Superficial),extensor_carpi_radialis,,arms
+Extensor Digitorum,Posterior Compartment Forearm (Superficial),extensor_carpi_radialis,,arms
+Extensor Digitorum Longus,Anterior Compartment Lower Leg,peroneus_longus,calves,legs
+External Rotators,,gluteus_medius,glutes,legs
+Fibularis Brevis,Lateral Compartment Lower Leg,peroneus_longus,calves,legs
+Fibularis Longus,Lateral Compartment Lower Leg,peroneus_longus,calves,legs
+Fibularis Tertius,Anterior Compartment Lower Leg,peroneus_longus,calves,legs
+Flexor Carpi Radialis (1),Anterior Compartment Forearm (Superficial),flexor_carpi_radialis,,arms
+Flexor Carpi Ulnaris (1),Anterior Compartment Forearm (Superficial),flexor_carpi_ulnaris,,arms
+Flexor Digitorum Profundus,Anterior Compartment Forearm (Deep),flexor_carpi_radialis,,arms
+Flexor Digitorum Superficialis,Anterior Compartment Forearm (Intermediate),flexor_carpi_radialis,,arms
+Gastrocnemius,,gastrocnemius,calves,legs
+Gastrocnemius (Lateral Head),Posterior Compartment Lower Leg (Superficial),gastrocnemius,calves,legs
+Gastrocnemius (Medial Head),Posterior Compartment Lower Leg (Superficial),gastrocnemius,calves,legs
+Glutes,,gluteus_maximus,glutes,legs
+Gluteus Maximus,,gluteus_maximus,glutes,legs
+Gluteus Medius,,gluteus_medius,glutes,legs
+Gluteus Minimus,Superficial Muscles of Gluteal Region,gluteus_medius,glutes,legs
+Gracilis,,gracilis,hamstrings,legs
+Hamstrings,,biceps_femoris,hamstrings,legs
+Iliacus,Lower Thigh (Anterior),rectus_femoris,quadriceps,legs
+Iliocostalis (1),Deep Back Muscles (Intermediate),erector_spinae,lower_back,back
+Iliopsoas,,rectus_femoris,quadriceps,legs
+Infraspinatus,,infraspinatus,upper_back,back
+Intercostals,,serratus_anterior,abs,core
+Internal Oblique,,external_obliques,abs,core
+Intrinsic Back Muscles,Deep Back Muscles (Deepest),erector_spinae,lower_back,back
+Lateral Deltoid,,deltoids,shoulders,shoulders
+Latissimus Dorsi,,latissimus_dorsi,lats,back
+Levator Scapulae,,trapezius,upper_back,back
+Longissimus (1),Deep Back Muscles (Intermediate),erector_spinae,lower_back,back
+Lower Trapezius,,lower_trapezius,upper_back,back
+Medial Deltoid,,deltoids,shoulders,shoulders
+Middle Deltoid,,deltoids,shoulders,shoulders
+Middle Scalene,,sternocleidomastoid,,core
+Middle Trapezius,,trapezius,upper_back,back
+Multifidus,Deep Back Muscles (Deepest),erector_spinae,lower_back,back
+Obliques,,external_obliques,abs,core
+Obturator Externus,Deep Muscles of Gluteal Region,gluteus_medius,glutes,legs
+Obturator Internus,Deep Muscles of Gluteal Region,gluteus_medius,glutes,legs
+Palmaris Longus,Anterior Compartment Forearm (Superficial),flexor_carpi_radialis,,arms
+Pectineus,Lower Thigh (Anterior),adductor_longus_and_pectineus,hamstrings,legs
+Pectoralis Major,,pectoralis_major,chest,chest
+Pectoralis Major (Abdominal Part),,pectoralis_major,chest,chest
+Pectoralis Major (Clavicular Part),,pectoralis_major,chest,chest
+Pectoralis Major (Sternal Part),,pectoralis_major,chest,chest
+Pectoralis Minor,,pectoralis_major,chest,chest
+Peroneus,,peroneus_longus,calves,legs
+Peroneus Longus,Lateral Compartment Lower Leg,peroneus_longus,calves,legs
+Piriformis,Deep Muscles of Gluteal Region,gluteus_medius,glutes,legs
+Plantaris,Posterior Compartment Lower Leg (Superficial),gastrocnemius,calves,legs
+Popliteus,Posterior Compartment Lower Leg (Deep),gastrocnemius,calves,legs
+Posterior Deltoid,,deltoids,shoulders,shoulders
+Posterior Scalene,,sternocleidomastoid,,core
+Pronator Quadratus,Anterior Compartment Forearm (Deep),flexor_carpi_radialis,,arms
+Pronator Teres,Anterior Compartment Forearm (Superficial),flexor_carpi_radialis,,arms
+Psoas Major,Lower Thigh (Anterior),rectus_femoris,quadriceps,legs
+Psoas Minor,Lower Thigh (Anterior),rectus_femoris,quadriceps,legs
+Quadratus Femoris,Deep Muscles of Gluteal Region,gluteus_medius,glutes,legs
+Quadratus Lumborum,,erector_spinae,lower_back,core
+Quadriceps,,rectus_femoris,quadriceps,legs
+Rear Deltoid,,deltoids,shoulders,shoulders
+Rectus Abdominis,,rectus_abdominis,abs,core
+Rectus Femoris,,rectus_femoris,quadriceps,legs
+Rhomboid Major,,rhomboid_muscles,upper_back,back
+Rhomboid Minor,,rhomboid_muscles,upper_back,back
+Rotator Cuff,,infraspinatus,shoulders,shoulders
+Rotatores,Deep Back Muscles (Deepest),erector_spinae,lower_back,back
+Sartorius,,sartorius,quadriceps,legs
+Scalenes,,sternocleidomastoid,,core
+Semimembranosus,Upper Thigh (Posterior),semitendinosus,hamstrings,legs
+Semispinalis,Deep Back Muscles (Deepest),erector_spinae,lower_back,back
+Semitendinosus,,semitendinosus,hamstrings,legs
+Serratus Anterior,,serratus_anterior,abs,core
+Serratus Posterior Inferior,,erector_spinae,lower_back,back
+Serratus Posterior Superior,,rhomboid_muscles,upper_back,back
+Six Pack,,rectus_abdominis,abs,core
+Soleus,,soleus,calves,legs
+Spinalis (1),Deep Back Muscles (Intermediate),erector_spinae,lower_back,back
+Splenius Capitis,,trapezius,upper_back,core
+Splenius Cervicis,,trapezius,upper_back,core
+Sternocleidomastoid,,sternocleidomastoid,,core
+Subclavius,,pectoralis_major,chest,chest
+Subscapularis,,infraspinatus,shoulders,shoulders
+Superficial Head,Upper Thigh (Anterior),rectus_femoris,quadriceps,legs
+Supinator,Posterior Compartment Forearm (Deep),brachioradialis,,arms
+Supraspinatus,,infraspinatus,shoulders,shoulders
+Tensor Fasciae Latae,,tensor_fasciae_latae,glutes,legs
+Teres Major,,teres_major,lats,back
+Teres Minor,,teres_major,upper_back,back
+Thighs,,rectus_femoris,quadriceps,legs
+Tibialis Anterior,Anterior Compartment Lower Leg,peroneus_longus,calves,legs
+Tibialis Posterior,Posterior Compartment Lower Leg (Deep),soleus,calves,legs
+Transverse Abdominis,,external_obliques,abs,core
+Transversospinalis Group,,erector_spinae,lower_back,back
+Trapezius,,trapezius,upper_back,back
+Triceps Brachii,,triceps_brachii,triceps,arms
+Triceps Brachii (Lateral Head),Upper Arm (Posterior),triceps_brachii,triceps,arms
+Triceps Brachii (Long Head),Upper Arm (Posterior),triceps_brachii,triceps,arms
+Triceps Brachii (Medial Head),Upper Arm (Posterior),triceps_brachii,triceps,arms
+Upper Trapezius,,trapezius,upper_back,back
+Vastus Intermedius,Upper Thigh (Anterior),vastus_lateralis,quadriceps,legs
+Vastus Lateralis,,vastus_lateralis,quadriceps,legs
+Vastus Medialis,,vastus_medialis,quadriceps,legs
+Vastus Medialis (VMO),Upper Thigh (Anterior),vastus_medialis,quadriceps,legs
