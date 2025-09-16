@@ -1,44 +1,69 @@
-@import "tailwindcss";
-
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  margin: 0;
+  padding: 0;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* Custom slider styles for progression slider */
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+  background: #ddd;
+  outline: none;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #3b82f6; /* Tailwind blue-500 */
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #3b82f6; /* Tailwind blue-500 */
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* SVG styling for smooth transitions */
+svg g {
+  transition: all 0.3s ease;
+}
+
+/* Base styling for ALL svg paths */
+.body-view svg path {
+  transition: fill 0.3s ease, opacity 0.3s ease;
+  stroke: rgba(0, 0, 0, 0.1);
+  stroke-width: 0.5;
+}
+
+/* Specific styling for body contour path */
+.body-view svg path#body-contour {
+  fill: rgb(189, 195, 199);
+  opacity: 0.6;
+}
+
+/* Ensure SVG fits properly in container */
+.body-view svg {
+  width: 100%;
+  height: 100%;
+  max-width: 400px;
+  max-height: 600px;
+  object-fit: contain;
+  transition: all 0.3s ease;
+}
+
+/* Responsive SVG sizing */
+@media (max-width: 768px) {
+  .body-view svg {
+    max-width: 300px;
+    max-height: 500px;
   }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }
